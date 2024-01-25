@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set CI to false
-        run: echo "process.env.CI = false" >> $GITHUB_ENV
-
       - name: Build
         run: npm run build
 
