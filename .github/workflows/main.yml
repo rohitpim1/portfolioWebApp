@@ -40,21 +40,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Print Secrets
-        run: |
-          echo "HOSTINGER_HOST: ${{ secrets.HOSTINGER_HOST }}"
-          echo "HOSTINGER_USER: ${{ secrets.HOSTINGER_USER }}"
-          echo "HOSTINGER_PASSWORD: ${{ secrets.HOSTINGER_PASSWORD }}"
+     
 
       - name: Deploy to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
 
         with:
-          host: ${{ secrets.HOSTINGER_HOST }}
-          username: ${{ secrets.HOSTINGER_USER }}
-          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./build/*
+          server-dir: /home/u507924523/domains/yourhousi.in/public_html/portfoliomain  
           
-          script: |
-            cd /home/u507924523/domains/yourhousi.in/public_html/portfoliomain
-            rm -rf *
-            cp -r ./build/* .
