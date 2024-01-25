@@ -47,12 +47,13 @@ jobs:
           echo "HOSTINGER_PASSWORD: ${{ secrets.HOSTINGER_PASSWORD }}"
 
       - name: Deploy to Hostinger
-        uses: appleboy/ssh-action@master
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+
         with:
           host: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USER }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
-          port: 22 # Use the appropriate port if different
+          
           script: |
             cd /home/u507924523/domains/yourhousi.in/public_html/portfoliomain
             rm -rf *
