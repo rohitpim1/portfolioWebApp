@@ -49,7 +49,7 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./build
+          local-dir: build
           git-ftp-args: --auto-init
           server-dir: /home/u507924523/domains/yourhousi.in/public_html/portfoliomain  
           
