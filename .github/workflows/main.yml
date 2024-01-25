@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set CI to false
+        run: echo "process.env.CI = false" >> $GITHUB_ENV
+
       - name: Build
         run: npm run build
 
@@ -34,9 +37,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Set CI to false
-        run: echo "process.env.CI = false" >> $GITHUB_ENV
 
       - name: Deploy to Hostinger
         uses: appleboy/ssh-action@master
