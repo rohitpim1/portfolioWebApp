@@ -17,6 +17,9 @@ jobs:
       - name: Set CI to false
         run: echo "process.env.CI = false" >> $GITHUB_ENV
 
+      - name: Debug CI environment variable
+        run: echo "CI is set to $CI"
+        
       - name: Set Node.js version to 16
         uses: actions/setup-node@v3
         with:
