@@ -52,7 +52,7 @@ jobs:
           host: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USER }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
-          # Use the appropriate port if different
+          port: 22 # Use the appropriate port if different
           script: |
             cd /home/u507924523/domains/yourhousi.in/public_html/portfoliomain
             rm -rf *
