@@ -34,11 +34,18 @@ jobs:
     runs-on: ubuntu-latest
       
     needs: build
+   
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Print Secrets
+        run: |
+          echo "HOSTINGER_HOST: ${{ secrets.HOSTINGER_HOST }}"
+          echo "HOSTINGER_USER: ${{ secrets.HOSTINGER_USER }}"
+          echo "HOSTINGER_PASSWORD: ${{ secrets.HOSTINGER_PASSWORD }}"
+          
       - name: Deploy to Hostinger
         uses: appleboy/ssh-action@master
         with:
