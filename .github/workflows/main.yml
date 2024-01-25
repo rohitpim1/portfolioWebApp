@@ -39,4 +39,5 @@ jobs:
           script: |
             cd /home/u507924523/domains/yourhousi.in/public_html/portfoliomain
             rm -rf *
-            cp -r /path/to/your/repository/build/* .
+            cp -r  ./build/* .
+
