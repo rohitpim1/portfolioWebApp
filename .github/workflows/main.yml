@@ -25,4 +25,4 @@ jobs:
       run: npm run build
 
     - name: Deploy to GitHub Pages
-      run: npm run deploy
+      run: npm run deploy ${{ secrets.TOKEN }}
